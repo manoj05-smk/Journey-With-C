@@ -2,3 +2,27 @@ My Reference :
         &x    -> Address of x           (gives location in memory)
         *     -> DeReference Operator   (go to that address, get value)
         int*  -> Pointer declaration    (this variable holds an address)
+
+Explanation with Example:
+x         = 10
+&x        = 0x61ff0c
+p         = 0x61ff0c    ← same as &x 
+*p        = 10          ← same as x 
+&p        = 0x61ff08    ← pointer itself lives here
+
+After *p = 99:
+x         = 99          ← changed through pointer!
+*p        = 99
+MEMORY:
+┌──────────┬───────────┬────────────┐
+│ Address  │   Value   │  Variable  │
+├──────────┼───────────┼────────────┤
+│ 0x61ff0c │    10     │   int x    │
+├──────────┼───────────┼────────────┤
+│ 0x61ff08 │ 0x61ff0c  │   int *p   │ ← p stores address of x
+└──────────┴───────────┴────────────┘
+
+p ──────────────────────→ x
+(holds address)          (holds value)
+
+*p means: "follow the arrow, get the value"
