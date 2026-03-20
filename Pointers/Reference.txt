@@ -26,3 +26,7 @@ p ──────────────────────→ x
 (holds address)          (holds value)
 
 *p means: "follow the arrow, get the value"
+
+Note:
+PASS BY VALUE     → function gets a COPY  → original SAFE
+PASS BY REFERENCE → function gets ADDRESS → original CHANGES
