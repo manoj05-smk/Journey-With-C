@@ -30,3 +30,11 @@ p ──────────────────────→ x
 Note:
 PASS BY VALUE     → function gets a COPY  → original SAFE
 PASS BY REFERENCE → function gets ADDRESS → original CHANGES
+
+Pointer to Pointer:
+
+**Memory chain:**
+pp ──→ p ──→ x
+&p    &x    10
+
+**pp means: follow arrow twice → get x
