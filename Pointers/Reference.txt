@@ -1,0 +1,5 @@
+My Reference :
+        &x    -> Address of x           (gives location in memory)
+        *     -> DeReference Operator   (go to that address, get value)
+        int*  -> Pointer declaration    (this variable holds an address)
+   
