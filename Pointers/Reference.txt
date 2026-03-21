@@ -38,3 +38,8 @@ pp ──→ p ──→ x
 &p    &x    10
 
 **pp means: follow arrow twice → get x
+
+How Pointer is Working:
+arr       = int*        =>  +1 jumps 4 bytes   (one int)
+&arr[0]   = int*        =>  +1 jumps 4 bytes   (same as arr)
+&arr      = int(*)[3]   =>  +1 jumps 12 bytes  (whole array)
