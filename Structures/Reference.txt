@@ -13,3 +13,18 @@ Eg:
   int myNum;           // Member (int variable)
   char myLetter;       // Member (char variable)
   }; // End the structure with a semicolon
+
+Nested Struct:
+*A structure can also contain another structure as a member. This is called a nested structure.
+
+Eg:
+struct Owner {
+  char firstName[30];
+  char lastName[30];
+};
+
+struct Car {
+  char brand[30];
+  int year;
+  struct Owner owner; // Nested structure
+};
