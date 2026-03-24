@@ -1,0 +1,3 @@
+What is Structure ?
+ * A structure (struct) is a user-defined data type that lets you group different types of data under one name.
+ * Each variable in the structure is known as a member of the structure.
