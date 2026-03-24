@@ -1,3 +1,9 @@
 What is Structure ?
  * A structure (struct) is a user-defined data type that lets you group different types of data under one name.
  * Each variable in the structure is known as a member of the structure.
+
+Important Notes:
+-> To access members of a structure, use the dot syntax (.)
+-> can easily create multiple structure variables with different values.
+-> use the strcpy() function and assign the value to Member String in Structure.
+-> can also assign values to members of a structure variable at declaration time, in a single line.
