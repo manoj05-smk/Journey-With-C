@@ -28,3 +28,8 @@ struct Car {
   int year;
   struct Owner owner; // Nested structure
 };
+
+Pointer  & Structure:
+Ways To access:
+(*p).variable   // Dereference p
+p-variable     // Arrow operator — does the same thing
