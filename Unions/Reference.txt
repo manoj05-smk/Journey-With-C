@@ -6,6 +6,7 @@ Syntax:
        float f;
        char c;
    };
+ => To access members of a Union, use the dot (.) syntax.
 
 Structure vs Unions:
 * Struct -> Each member has its own memory.
