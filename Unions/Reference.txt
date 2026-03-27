@@ -1,4 +1,4 @@
-Union:
+Unions:
    A union is a user-defined data type where all members share the same memory location.
 Syntax:
    union Data {
