@@ -1,0 +1,12 @@
+Union:
+   A union is a user-defined data type where all members share the same memory location.
+Syntax:
+   union Data {
+       int i;
+       float f;
+       char c;
+   };
+
+Structure vs Unions:
+* Struct -> Each member has its own memory.
+* Union -> All members share the same memory, which means you can only use one of the values at a time.
