@@ -17,3 +17,6 @@ Structure vs Unions:
 | Memory  | Separate for each     | Shared      |
 | Size    | Sum of members        | Max member  |
 | Usage   | Store multiple values | Save memory |
+
+Memory Size:
+   Size => size of the largest member Datatype
