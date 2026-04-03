@@ -1,0 +1,4 @@
+C enums:
+->An enum is a special type that represents a group of constants (unchangeable values).
+->To create an enum, use the enum keyword, followed by the name of the enum, and separate the enum items with a comma.
+->By default, the first item has the value 0, the second has the value 1, etc.
