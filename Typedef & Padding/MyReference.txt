@@ -3,3 +3,25 @@ Typedef:
 Keyword:
      typedef ------
 -> typedef is often used together with struct, enum, and function pointers to keep code clean and easier to read.
+
+Padding:
+-> Padding means the compiler sometimes adds empty spaces (extra bytes of padding) inside a struct to keep things fast and properly aligned in memory.
+
+Eg:
+  struct Example {
+     char a; // 1 byte
+     int b;  // 4 bytes
+     char c; // 1 byte
+    };
+  int main() {
+  printf("Size of struct: %zu bytes\n", sizeof(struct Example));
+  return 0;
+}
+o/p:
+12 bytes 
+
+why?
+  1 (char) + 3 (Padding) + 4 (int) + 1 (char) + 3 (Padding) = 12 (total)
+
+How to Reduce Padding?
+     ->Padding depends on the order of members in the struct. If you group larger types first, you can make the struct smaller.
