@@ -1,0 +1,4 @@
+Typedef:
+ ->The typedef keyword lets you create a new name (an alias) for an existing type.
+Keyword:
+     typedef ------
