@@ -4,3 +4,7 @@ C enums:
 ->By default, the first item has the value 0, the second has the value 1, etc.
 
 Note: ENUM values are integers internally.
+
+Usage:
+->Enum in Switch Statement
+->Enum with typedef (More Easier way).
