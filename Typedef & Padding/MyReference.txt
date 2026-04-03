@@ -2,7 +2,8 @@ Typedef:
  ->The typedef keyword lets you create a new name (an alias) for an existing type.
 Keyword:
      typedef ------
--> typedef is often used together with struct, enum, and function pointers to keep code clean and easier to read.
+Usage:
+ -> typedef is often used together with struct, enum, and function pointers to keep code clean and easier to read.
 
 Padding:
 -> Padding means the compiler sometimes adds empty spaces (extra bytes of padding) inside a struct to keep things fast and properly aligned in memory.
