@@ -1,5 +1,0 @@
-Typedef:
- ->The typedef keyword lets you create a new name (an alias) for an existing type.
-Keyword:
-     typedef ------
--> typedef is often used together with struct, enum, and function pointers to keep code clean and easier to read.
