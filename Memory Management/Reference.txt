@@ -1,0 +1,3 @@
+Def:
+   Memory management is the process of handling how much memory a program uses through allocation, reallocation and deallocation.
+   When you create a basic variable, C will automatically reserve space for that variable.
