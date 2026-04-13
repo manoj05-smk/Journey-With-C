@@ -1,3 +1,50 @@
 Def:
    Memory management is the process of handling how much memory a program uses through allocation, reallocation and deallocation.
    When you create a basic variable, C will automatically reserve space for that variable.
+
+
+Memory Layout of a C Program:
+   ->When you run a C program, the OS gives it memory divided into 4 sections:
+  
+  High Address
+  ┌─────────────────┐
+  │   Stack         │  ← Local variables, function calls
+  ├─────────────────┤
+  │   ↓ grows down  │
+  │                 │
+  │   ↑ grows up    │
+  ├─────────────────┤
+  │   Heap          │  ← malloc/calloc (dynamic memory)
+  ├─────────────────┤
+  │   Data Segment  │  ← Global & static variables
+  ├─────────────────┤
+  │   Code Segment  │  ← Actual program code
+  ├─────────────────┤
+  Low Address
+
+Allocate Memory:
+->The process of reserving memory is called allocation.
+->C has two types of memory: Static memory & dynamic memory.
+
+Static Memory:
+->Static memory is memory that is reserved for variables before the program runs.
+->Allocation of static memory is also known as compile time memory allocation
+
+Dynamic Memory:
+->Dynamic memory is memory that is allocated after the program starts running. 
+->Allocation of dynamic memory can also be referred to as runtime memory allocation.
+->Dynamic memory does not belong to a variable, it can only be accessed with pointers.
+
+use the malloc() or calloc() functions For Allocation. 
+Note: include the <stdlib.h> header to use those functions.
+
+Syntax:
+using malloc(): => Initialize Garbage Values
+     ptr = (type*) malloc(size_in_bytes); ||  Eg: int *p = (int*) malloc(sizeof(int));
+using calloc(): => Initialize Zeros
+     ptr = (type*) calloc(n, size);       ||  Eg: int *p = (int*) calloc(5, sizeof(int));
+
+
+
+     
+
