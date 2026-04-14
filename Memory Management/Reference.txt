@@ -6,21 +6,23 @@ Def:
 Memory Layout of a C Program:
    ->When you run a C program, the OS gives it memory divided into 4 sections:
   
-  High Address
-  ┌─────────────────┐
-  │   Stack         │  ← Local variables, function calls
-  ├─────────────────┤
-  │   ↓ grows down  │
-  │                 │
-  │   ↑ grows up    │
-  ├─────────────────┤
-  │   Heap          │  ← malloc/calloc (dynamic memory)
-  ├─────────────────┤
-  │   Data Segment  │  ← Global & static variables
-  ├─────────────────┤
-  │   Code Segment  │  ← Actual program code
-  ├─────────────────┤
-  Low Address
+  HIGH ADDRESS  ┌─────────────────────┐
+                │       STACK         │  ← local variables, function calls
+                │   (grows downward)  │
+                ├─────────────────────┤
+                │         ↓           │
+                │      (gap)          │
+                │         ↑           │
+                ├─────────────────────┤
+                │       HEAP          │  ← malloc/calloc/realloc
+                │   (grows upward)    │
+                ├─────────────────────┤
+                │       BSS           │  ← uninitialized global/static vars
+                ├─────────────────────┤
+                │       DATA          │  ← initialized global/static vars
+                ├─────────────────────┤
+ LOW ADDRESS    │       TEXT          │  ← your compiled code (read-only)
+                └─────────────────────┘
 
 Allocate Memory:
 ->The process of reserving memory is called allocation.
@@ -38,8 +40,8 @@ Dynamic Memory:
 use the malloc() or calloc() functions For Allocation. 
 Note: include the <stdlib.h> header to use those functions.
 
-Syntax:
-using malloc(): => Initialize Garbage Values  // allocates 'size' bytes, returns void*
+Allocation of Dynamic Memory:
+1. using malloc(): => Initialize Garbage Values  // allocates 'size' bytes, returns void*
      ptr = (type*) malloc(size_in_bytes); ||  Eg: int *p = (int*) malloc(sizeof(int));
 Note:
 ---------------------------------------------------------------------------
@@ -60,5 +62,30 @@ Note:
    //              Change the type on the left → right side auto-adapts!
 ----------------------------------------------------------------------------
 
-using calloc(): => Initialize Zeros  // allocates count*size bytes, ALL set to ZERO
+2. using calloc(): => Initialize Zeros  // allocates count*size bytes, ALL set to ZERO
      ptr = (type*) calloc(n, size);       ||  Eg: int *p = (int*) calloc(5, sizeof(int));
+
+Reallocate Memory:
+->If the amount of memory you reserved is not enough, you can reallocate it to make it larger.
+->Reallocating reserves a different (usually larger) amount of memory while keeping the data that was stored in it.
+
+Usage: realloc() function takes two parameters:
+int *ptr2 = realloc(ptr1, size);
+           * The first parameter is a pointer to the memory that is being resized.
+           * The second parameter specifies the new size of allocated memory, measured in bytes.
+
+Deallocate (free) Memory:
+->Deallocation is also referred to as "freeing" the memory.
+->Dynamic memory stays reserved until it is deallocated or until the program ends.
+
+Usage:
+* To deallocate memory, use the free() function:
+        free(pointer);
+
+Memory Leaks:
+ A memory leak happens when dynamic memory is allocated but never freed.
+
+Note: It is considered a good practice to set a pointer to NULL after freeing memory so that you cannot accidentally continue using it.
+Eg:
+   free(ptr);
+   ptr = NULL;
