@@ -39,12 +39,26 @@ use the malloc() or calloc() functions For Allocation.
 Note: include the <stdlib.h> header to use those functions.
 
 Syntax:
-using malloc(): => Initialize Garbage Values
+using malloc(): => Initialize Garbage Values  // allocates 'size' bytes, returns void*
      ptr = (type*) malloc(size_in_bytes); ||  Eg: int *p = (int*) malloc(sizeof(int));
-using calloc(): => Initialize Zeros
+Note:
+---------------------------------------------------------------------------
+    // Imagine you change int → double later
+    // Style A — WITH cast (you must update in 2 places!)
+    double *arr = (double*)malloc(n * sizeof(double));    <==
+    //            ^^^^^^^^ forgot to change this cast? silent bug!
+    // Style B — WITHOUT cast (only 1 place to change)
+    double *arr = malloc(n * sizeof(double));             <==
+    // Clean, no redundancy 
+---------------------------------------------------------------------------
+   // The most robust pattern used by professionals:
+   int    *arr = malloc(n * sizeof(*arr));
+   double *arr = malloc(n * sizeof(*arr));
+   char   *arr = malloc(n * sizeof(*arr));
+   //                        ^^^^^^^^^
+   //              sizeof automatically follows the pointer type!
+   //              Change the type on the left → right side auto-adapts!
+----------------------------------------------------------------------------
+
+using calloc(): => Initialize Zeros  // allocates count*size bytes, ALL set to ZERO
      ptr = (type*) calloc(n, size);       ||  Eg: int *p = (int*) calloc(5, sizeof(int));
-
-
-
-     
-
