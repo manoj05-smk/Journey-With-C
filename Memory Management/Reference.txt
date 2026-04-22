@@ -89,3 +89,21 @@ Note: It is considered a good practice to set a pointer to NULL after freeing me
 Eg:
    free(ptr);
    ptr = NULL;
+
+Note:
+   [] ===> is a DeReference of a pointer 
+   That is... 
+          arr[i]
+          // C internally converts this to:
+          *(arr + i)
+          //  ^
+          //  * means "go to that address and get the VALUE inside")
+
+The & and * Cancellation Rule:
+  &arr[i]
+      = &( *(arr + i) )    // expand arr[i]
+      =     (arr + i)      // & and * cancel out
+      =      arr + i       // pure address 
+
+Important Note:
+   => Dynamic allocation only changes HOW the memory was created (heap vs stack). It does NOT change how [] and & work on that memory.
