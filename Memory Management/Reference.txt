@@ -107,3 +107,11 @@ The & and * Cancellation Rule:
 
 Important Note:
    => Dynamic allocation only changes HOW the memory was created (heap vs stack). It does NOT change how [] and & work on that memory.
+
+Usage of (void*):
+-> Is the generic pointer type [(void*) → correct universal format]
+-> It is designed to:
+     * hold address of any data type
+     * be safely passed around without type assumptions
+For printing memory address:
+      printf("%p", (void*)ptr);  // safe Usage
