@@ -71,3 +71,5 @@ Usage: fputs("Hello", fp);
 Usage: 
   char str[100];
   fgets(str,100,fp);
+
+7. EOF (End Of File): When file ends, C returns EOF
