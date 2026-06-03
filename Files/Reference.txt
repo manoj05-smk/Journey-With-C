@@ -1,0 +1,73 @@
+File Handling:
+       In C, you can create, open, read, and write to files by declaring a pointer of type FILE, and use the fopen() function.
+       
+       Usage:
+            FILE *fptr;
+            fptr = fopen(filename, mode);
+-> FILE is basically a data type, and we need to create a pointer variable to work with it (fptr)
+
+     Parameter	                                         Description
+     filename	                        The name of the actual file you want to open (or create), like filename.txt
+     mode                            	A single character, which represents what you want to do with the file (read, write or append):
+                                       w - Writes to a file
+                                       a - Appends new data to a file
+                                       r - Reads from a file
+
+File Modes:
+->Write Mode (w):
+      fp = fopen("data.txt", "w");
+      Behavior:
+           * Creates file if not exists
+           * Deletes old content if exists
+
+->Read Mode (r):
+      fp = fopen("data.txt", "r");
+      Behavior:
+           * Reads existing file.
+           * Error if file doesn't exist.
+
+-> Append Mode (a):
+      fp = fopen("data.txt","a");
+      Behavior:
+           * Adds data at the end.
+
+| Mode | Meaning                         |
+| ---- | ------------------------------- |
+| r+   | Read & Write                    |
+| w+   | Read & Write, erase old content |
+| a+   | Read & Append                   |
+
+1. Writing to a File: Using fprintf()
+Usage:
+   FILE *fp;
+   fp = fopen("data.txt","w");
+   fprintf(fp,"Hello World");
+   fclose(fp);
+
+Note:
+   -> fclose Used to closing the file.
+
+2. Reading from a File: Using fscanf()
+Usage:
+    FILE *fp;
+    char name[20];
+    fp = fopen("data.txt","r");
+    fscanf(fp,"%s",name);
+    printf("%s",name);
+    fclose(fp);
+
+3. Character-by-Character Writing: fputc()
+Usage: fputc('A', fp);
+
+4. Character-by-Character Reading: fgetc()
+Usage: 
+   char ch;
+   ch = fgetc(fp);
+
+5. String Writing: fputs()
+Usage: fputs("Hello", fp);
+
+6. String Reading: fgets()
+Usage: 
+  char str[100];
+  fgets(str,100,fp);
